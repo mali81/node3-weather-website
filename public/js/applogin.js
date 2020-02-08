@@ -1,4 +1,4 @@
-console.log('client side javascript2 is loaded')
+//console.log('client side javascript2 is loaded')
 
 
 

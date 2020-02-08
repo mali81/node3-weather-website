@@ -23,13 +23,11 @@ const forecast = (late,long,callback)=>{
         callback('unable to find location ')
         }else{
         
-            callback(undefined,{
+            callback(undefined,
         
-                currentsummary : body.daily.data[0].summary,
-                currenttemp : 'it is currently '+body.currently.temperature+' degrees out ',
-                precipProbability:'There is a '+ body.currently.precipProbability+ '% chance of rain'
+                body.daily.data[0].summary+'it is currently '+body.currently.temperature+' degrees out '+'There is a '+ body.currently.precipProbability+ '% chance of rain '+ ' Wind speed '+body.currently.windSpeed
         
-            })
+            )
         
             
         }

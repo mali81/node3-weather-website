@@ -18,13 +18,13 @@ weatherForm.addEventListener('submit',(e)=>{
     messageone.textContent='Loading....'
 messagetwo.textContent=''
 
-if (location ==='cairo')
-{
+// if (location ==='cairo')
+// {
 
-   return window.location = '/video?address='+location
+//    return window.location = '/video?address='+location
 
 
-}
+// }
 
     fetch('/weather?address='+encodeURIComponent(location)).then((response)=>{
 
@@ -37,8 +37,7 @@ response.json().then((data)=>{
     else{
 messageone.textContent=data.location
 
-messagetwo.textContent=data.forecastdata.currentsummary+data.forecastdata.currenttemp+data.forecastdata.precipProbability
-
+messagetwo.textContent=data.forecastdata
 
 
 

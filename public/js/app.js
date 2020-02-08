@@ -21,12 +21,12 @@ messagetwo.textContent=''
 if (location ==='cairo')
 {
 
-   return window.location = 'http://localhost:3000/video?address='+location
+   return window.location = '/video?address='+location
 
 
 }
 
-    fetch('http://localhost:3000/weather?address='+encodeURIComponent(location)).then((response)=>{
+    fetch('/weather?address='+encodeURIComponent(location)).then((response)=>{
 
 response.json().then((data)=>{
 

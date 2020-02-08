@@ -19,7 +19,7 @@ login.addEventListener('submit',(e)=>{
 
 
 
-    fetch('http://localhost:3000/loginpagecheck?username='+uname+'&password='+ps).then((response)=>{
+    fetch('/loginpagecheck?username='+uname+'&password='+ps).then((response)=>{
 
 response.json().then((data)=>{
 
@@ -29,7 +29,7 @@ response.json().then((data)=>{
     }
     else{
 
-        window.location = 'http://localhost:3000/'
+        window.location = '/'
 
 
 

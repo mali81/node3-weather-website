@@ -3,9 +3,10 @@ const path =require('path')
 const hbs=require('hbs')
 const geocode= require ('./utils/geocode')
 const forecast=require ('./utils/forecast')
+const {MongoClient,ObjectID}= require('mongodb')
 
-
-
+const connectionURL= 'mongodb://127.0.0.1:27017'
+const databaseName='web_access'
 
 
 console.log(__dirname)
@@ -111,33 +112,6 @@ app.get('/weather',(req,res)=>{
 
 
 
-
-
-
-
-app.get('/products',(req,res)=>{
-if (!req.query.search){
-
-return res.send({
-
-    error:'you must provide a search term'
-})
-
-}
-
-
-console.log(req.query.search)
-
-    res.send({
-
-    products:[]
-
-})
-
-})
-
-
-
 app.get('/video',(req,res)=>{
 
 res.render('videosupport',{
@@ -166,6 +140,30 @@ if(!req.query.username||!req.query.password){
         error: 'please enter a vaild user name and password '
     })
 }
+
+// MongoClient.connect(connectionURL,{useNewUrlParser:true},(error,client)=>{
+//     if (error){
+    
+//         return console.log('unable to connet to database')
+//     }
+    
+    
+//     const db = client.db(databaseName)
+
+//     db.collection('username').insertOne({username:req.query.username,password:req.query.password},(error,result)=>{
+
+// if(error){
+
+//     console.log(error)
+//     return console.log('unable to create data base')
+// }
+
+// console.log(result.ops)
+
+
+//     })
+
+// })
 
 return res.send({
 
